@@ -14,7 +14,8 @@ script = ExtResource("2_40omt")
 
 [node name="CharacterBody2D" parent="." unique_id=1181032267 instance=ExtResource("2_1mj6s")]
 z_index = 2
-position = Vector2(230, 101)
+position = Vector2(181, 99)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1904026790]
-zoom = Vector2(3, 3)
+position = Vector2(-3, 1)
+zoom = Vector2(4, 4)
