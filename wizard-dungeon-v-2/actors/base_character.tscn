@@ -6,6 +6,30 @@
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3mu34"]
 points = PackedVector2Array(8, 0, 0, -4, -8, 0, 0, 4)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mu34"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpye3"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lobac"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btcf6"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcw74"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppnpu"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8owq"]
 atlas = ExtResource("1_ygarp")
 region = Rect2(32, 0, 16, 16)
@@ -14,8 +38,73 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("1_ygarp")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhc75"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ps7"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pbyf"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aayx"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rln1"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1silj"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sp3m"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66t7w"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(48, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mpye3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mu34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpye3")
+}],
+"loop": true,
+"name": &"Idle_BackRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lobac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btcf6")
+}],
+"loop": true,
+"name": &"Idle_Back_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcw74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppnpu")
+}],
+"loop": true,
+"name": &"Idle_FrontLeft",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8owq")
@@ -24,9 +113,55 @@ animations = [{
 "texture": SubResource("AtlasTexture_hciu5")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle_FrontRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhc75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ps7")
+}],
+"loop": true,
+"name": &"Walk_BackLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pbyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aayx")
+}],
+"loop": true,
+"name": &"Walk_BackRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rln1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1silj")
+}],
+"loop": true,
+"name": &"Walk_FrontLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sp3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66t7w")
+}],
+"loop": true,
+"name": &"Walk_FrontRight",
 "speed": 5.0
 }]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_3mu34"]
 
 [node name="BaseCharacter" type="CharacterBody2D" unique_id=1064438478]
 safe_margin = 0.01
@@ -40,4 +175,10 @@ shape = SubResource("ConvexPolygonShape2D_3mu34")
 physics_interpolation_mode = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_mpye3")
-frame_progress = 0.17497866
+animation = &"Idle_BackRight"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1999262233]
+tree_root = SubResource("AnimationRootNode_3mu34")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=178268414]
