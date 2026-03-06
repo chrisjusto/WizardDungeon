@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://jpb4uyt208"]
+
+[ext_resource type="Script" uid="uid://bpq23pldhuui2" path="res://actors/base_character.gd" id="1_3mu34"]
+[ext_resource type="Texture2D" uid="uid://cjebk63c1m1ef" path="res://Assets/Character/Character_animloop-Sheet.png" id="1_ygarp"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3mu34"]
+points = PackedVector2Array(8, 0, 0, -4, -8, 0, 0, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8owq"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hciu5"]
+atlas = ExtResource("1_ygarp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpye3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8owq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hciu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BaseCharacter" type="CharacterBody2D" unique_id=1064438478]
+safe_margin = 0.01
+script = ExtResource("1_3mu34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197473388]
+position = Vector2(0, -4)
+shape = SubResource("ConvexPolygonShape2D_3mu34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1929754585]
+physics_interpolation_mode = 1
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_mpye3")
+frame_progress = 0.17497866
