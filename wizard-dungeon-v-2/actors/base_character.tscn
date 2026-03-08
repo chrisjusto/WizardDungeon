@@ -182,3 +182,6 @@ tree_root = SubResource("AnimationRootNode_3mu34")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=178268414]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1707591455]
+zoom = Vector2(8, 8)
